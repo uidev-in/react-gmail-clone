@@ -56,6 +56,9 @@ const SearchBarWrapper = styled.div`
     }
   }
 `;
+const SearchIconWrapper = styled(SearchIcon)`
+  color: #5f6368;
+`;
 const IconWrapper = styled.div`
   height: 50px;
   display: grid;
@@ -80,7 +83,8 @@ export default function Header() {
       </LogoWrapper>
       <SearchWrapper>
         <SearchBarWrapper>
-          <SearchIcon style={{ color: "#5f6368" }} />
+          <SearchIconWrapper />
+          {/* <SearchIcon style={{ color: "#5f6368" }} /> */}
           <input type="text" placeholder="Search all conversations" />
           <TuneIcon style={{ color: "#5f6368" }} />
         </SearchBarWrapper>
