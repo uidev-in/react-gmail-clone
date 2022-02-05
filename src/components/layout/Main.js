@@ -7,7 +7,7 @@ import SideIcons from "./SideIcons";
 //styling our component
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 200px auto 50px;
+  grid-template-columns: 250px auto 50px;
 `;
 
 export default function Main() {
