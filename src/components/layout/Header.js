@@ -18,7 +18,6 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 250px auto 200px;
   align-items: center;
-  border-bottom: 1px solid #eceff1;
 `;
 const LogoWrapper = styled.div`
   height: 50px;
