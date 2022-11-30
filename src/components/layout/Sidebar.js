@@ -7,6 +7,7 @@ import sidebarConfig from "../data/SidebarMenuConfig";
 const Wrapper = styled.div`
   padding: 1rem;
   display: grid;
+  grid-template-rows: 5% auto;
   gap: 20px;
 `;
 const ComposeWrapper = styled.div``;

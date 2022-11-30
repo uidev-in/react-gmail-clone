@@ -5,6 +5,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   height: 100%;
   display: grid;
+  grid-template-rows: 30% auto;
   padding: 0.5rem;
 `;
 const Icons = styled.div`
@@ -13,6 +14,8 @@ const Icons = styled.div`
   height: auto;
   align-items: start;
   justify-items: center;
+  cursor: pointer;
+  padding-top: 0.5rem;
 `;
 
 //image data
@@ -41,7 +44,13 @@ export default function SideIcons() {
       <Wrapper>
         <Icons>
           {icons.map((data, id) => (
-            <img src={data.img_link} width={20} height={20} alt={data.name} />
+            <img
+              src={data.img_link}
+              width={20}
+              height={20}
+              alt={data.name}
+              title={data.name}
+            />
           ))}
         </Icons>
       </Wrapper>
