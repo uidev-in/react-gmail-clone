@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Sidebar from "./Sidebar";
 import EmailView from "./EmailView";
 import SideIcons from "./SideIcons";
+import Compose from "../compose/Compose";
 
 //styling our component
 const Wrapper = styled.div`
@@ -16,6 +17,7 @@ export default function Main() {
       <Sidebar />
       <EmailView />
       <SideIcons />
+      <Compose />
     </Wrapper>
   );
 }
