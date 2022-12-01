@@ -13,7 +13,7 @@ import {
   Send,
   TramSharp,
 } from "@mui/icons-material";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 //styling our component
@@ -55,14 +55,20 @@ flex-direction:column;
   }
 `;
 const Input = styled.input`
-  width:100%:
-  padding: 0.5em;
+  width:100%;
+  padding: 0.5rem;
   margin: 0.5em;
   color: #222;
-  background: papayawhip;
+  heigt:60px;
+  background: transparent;
   border: none;
-  border-radius: 3px;
- 
+  border-radius: 0px;
+  border-bottom:2px solid #f2f6fc;
+  :focus{
+    outline:none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
   }
 `;
 const Textarea = styled.textarea`
@@ -71,10 +77,19 @@ const Textarea = styled.textarea`
   padding: 0.5em;
   margin: 0.5em;
   color: #222;
-  background: papayawhip;
+  background: transparent;
   border: none;
   border-radius: 3px;
- 
+  border-bottom:2px solid #f2f6fc;
+  font-style:16px;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  :focus{
+    outline:none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
   }
 `;
 const Footer = styled.div`
@@ -95,6 +110,15 @@ const SendButton = styled.div`
     height:35px;
     color:#fff;
     cursor:pointer;
+    :hover {
+        color:#0b57d0;  
+        background-color: #fff;
+        box-shadow: inset 0 0 0 1px transparent;
+        border-top-right-radius:20px;
+        border-bottom-right-radius:20px;
+        font-weight:600
+    
+      }
  }
  
   }
@@ -112,6 +136,8 @@ const DeleteButton = styled.div`
 `;
 
 export default function Compose() {
+  const [IsOpen, SetOpen] = useState(false);
+
   return (
     <>
       <Wrapper>
@@ -124,9 +150,9 @@ export default function Compose() {
           </Options>
         </Header>
         <Body>
-          <Input defaultValue="Recipients" type="email" />
-          <Input defaultValue="Subject" type="text" />
-          <Textarea />
+          <Input placeholder="Recipients" type="email" />
+          <Input placeholder="Subject" type="text" />
+          <Textarea rows="32" />
         </Body>
         <Footer>
           <SendButton>
@@ -135,14 +161,14 @@ export default function Compose() {
             </button>
           </SendButton>
           <EditorTool>
-            <FormatColorText />
-            <FormatItalic />
-            <AttachFile />
-            <Image />
-            <MoreVert />
+            <FormatColorText style={{ cursor: "pointer" }} />
+            <FormatItalic style={{ cursor: "pointer" }} />
+            <AttachFile style={{ cursor: "pointer" }} />
+            <Image style={{ cursor: "pointer" }} />
+            <MoreVert style={{ cursor: "pointer" }} />
           </EditorTool>
           <DeleteButton>
-            <DeleteOutline />
+            <DeleteOutline style={{ cursor: "pointer" }} />
           </DeleteButton>
         </Footer>
       </Wrapper>
