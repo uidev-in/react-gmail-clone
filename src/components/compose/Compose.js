@@ -15,6 +15,8 @@ import {
 } from "@mui/icons-material";
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { composeClose } from "../../store/email.slice";
 
 //styling our component
 const Wrapper = styled.div`
@@ -136,8 +138,12 @@ const DeleteButton = styled.div`
 `;
 
 export default function Compose() {
-  const [IsOpen, SetOpen] = useState(false);
+  const dispatch = useDispatch();
 
+  function fncClose() {
+    console.log("Called Closed fnc");
+    dispatch(composeClose());
+  }
   return (
     <>
       <Wrapper>
@@ -146,7 +152,8 @@ export default function Compose() {
           <Options>
             <Minimize />
             <CloseFullscreen />
-            <Close />
+
+            <Close style={{ cursor: "pointer" }} onClick={fncClose} />
           </Options>
         </Header>
         <Body>

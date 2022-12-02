@@ -45,6 +45,7 @@ export default function SideIcons() {
         <Icons>
           {icons.map((data, id) => (
             <img
+              key={id}
               src={data.img_link}
               width={20}
               height={20}

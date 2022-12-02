@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
-
+import { useDispatch } from "react-redux";
+import { composeOpen } from "../../store/email.slice";
 //styling our component
 const Wrapper = styled.div`
   min-width: 96px;
@@ -34,9 +35,16 @@ const Button = styled.div`
 `;
 
 export default function ComposeButton() {
+  const dispatch = useDispatch();
+
+  function fncOpen() {
+    console.log("Open Fnc call");
+    dispatch(composeOpen());
+  }
+
   return (
     <Wrapper>
-      <Button>
+      <Button onClick={fncOpen}>
         <CreateOutlinedIcon />
         <p>Compose</p>
       </Button>

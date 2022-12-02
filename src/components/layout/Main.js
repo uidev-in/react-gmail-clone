@@ -4,6 +4,8 @@ import Sidebar from "./Sidebar";
 import EmailView from "./EmailView";
 import SideIcons from "./SideIcons";
 import Compose from "../compose/Compose";
+import { useSelector } from "react-redux";
+import { composeBoxState } from ".././../store/email.slice";
 
 //styling our component
 const Wrapper = styled.div`
@@ -12,12 +14,14 @@ const Wrapper = styled.div`
 `;
 
 export default function Main() {
+  const isComposeOpen = useSelector(composeBoxState);
+
   return (
     <Wrapper>
       <Sidebar />
       <EmailView />
       <SideIcons />
-      <Compose />
+      {isComposeOpen && <Compose />}
     </Wrapper>
   );
 }

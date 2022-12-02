@@ -42,8 +42,8 @@ export default function Sidebar() {
         <ComposeButton />
       </ComposeWrapper>
       <MenuWrapper>
-        {sidebarConfig.map((item) => (
-          <MenuListItem>
+        {sidebarConfig.map((item, id) => (
+          <MenuListItem key={id}>
             {item.icon} {item.title}
           </MenuListItem>
         ))}
